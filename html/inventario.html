@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Productos</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body onload="checkLogin()">
+    <header>
+        <img src="../galeria/logo.webp" alt="Logo Empresa">
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <nav id="nav-menu">
+            <a href="./pagina.html">Inicio</a>
+            <a href="#">Descuentos</a>
+            <a href="#">Galería</a>
+            <a href="#">Inventario</a>
+        </nav>
+        <button class="logout-button" onclick="logout()">Cerrar Sesión</button>
+    </header>
+
+    <div class="container hidden" id="appContainer">
+        <h2>Gestión de Productos</h2>
+        <div id="adminControls" class="hidden">
+            <input type="text" id="productSelect" placeholder="producto">
+            <input type="text" id="colorInput" placeholder="Color">
+            <input type="number" id="quantityInput" placeholder="Cantidad" min="1">
+            <button onclick="addProduct()">Guardar</button>
+        </div>
+        <ul id="productList"></ul>
+        <button onclick="downloadPDF()">Descargar PDF</button>
+
+        <script src="../js/app.js"></script>
+</body>
+
+</html>
